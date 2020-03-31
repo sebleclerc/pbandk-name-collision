@@ -1,0 +1,17 @@
+syntax = "proto3";
+package sll_testnested;
+
+message MessageA {
+  string id = 1;
+  string name = 2;
+}
+
+message MessageB {
+  string id = 1;
+  string name = 2;
+
+  message MessageA {
+    bool is_same = 1;
+    int32 value = 2;
+  }
+}
