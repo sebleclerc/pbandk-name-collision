@@ -4,6 +4,13 @@ package sll_testnested;
 message MessageA {
   string id = 1;
   string name = 2;
+  MessageAType type = 3;
+}
+
+enum MessageAType {
+  Full = 0;
+  Outer = 1;
+  Middle = 2;
 }
 
 message MessageB {
@@ -13,5 +20,12 @@ message MessageB {
   message MessageA {
     bool is_same = 1;
     int32 value = 2;
+    MessageAType type = 3;
+  }
+
+  enum MessageAType {
+    Some = 0;
+    Other = 1;
+    Nested = 2;
   }
 }
